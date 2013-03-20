@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Cellenza.Demo.SignalR.WebServer.Models.Message>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.Action("Create")
+</p>
+<ul class="message-list">
+@foreach (var item in Model) {
+    <li>@Html.DisplayFor(modelItem => item.Text)@*            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@</li>
+}
+
+</ul>
