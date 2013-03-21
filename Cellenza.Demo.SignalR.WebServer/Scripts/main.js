@@ -38,8 +38,10 @@
 
         connection.start().done(function () {
             $('.shoutform').submit(function () {
+                var fields = $('input', this);
                 var message = { Text: shoutbox.val() };
                 connection.send(JSON.stringify(message));
+                shoutbox.val('');
                 return false;
             });
         });
