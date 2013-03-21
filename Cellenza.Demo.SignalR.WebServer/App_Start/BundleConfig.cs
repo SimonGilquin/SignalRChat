@@ -24,7 +24,9 @@ namespace Cellenza.Demo.SignalR.WebServer.App_Start
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/normalize.css",
+                "~/Content/Site.css"));
             bundles.Add(new ScriptBundle("~/Scripts/js").Include("~/Scripts/main.js"));
         }
     }

@@ -9,6 +9,7 @@ namespace Cellenza.Demo.SignalR.WebServer.Connections
 {
     public class MessageConnection : PersistentConnection
     {
+        #region Store
         public ICollection<Message> MessagesStore { get; set; }
 
         public MessageConnection()
@@ -20,11 +21,12 @@ namespace Cellenza.Demo.SignalR.WebServer.Connections
         {
             MessagesStore = store;
         }
-
+        #endregion
 
         protected override System.Threading.Tasks.Task OnReceived(IRequest request, string connectionId, string data)
         {
             var message = JsonSerializer.Parse(data, typeof(Message)) as Message;
+
             MessagesStore.Add(message);
             return Connection.Broadcast(message);
         }

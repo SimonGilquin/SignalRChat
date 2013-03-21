@@ -3,16 +3,9 @@
 @using (Html.BeginForm("Create", "Messages", FormMethod.Post, new { @class = "shoutform"})) {
     @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Message</legend>
-
-        <div class="editor-field">
-            @Html.TextBoxFor(model => model.Text, new { @class = "shoutbox", placeholder="Message goes here" })
-            @Html.ValidationMessageFor(model => model.Text)
-        </div>
-
-        <p>
-            <input type="submit" value="Send" />
-        </p>
-    </fieldset>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Text, new { @class = "shoutbox", placeholder="Message goes here" })
+        @Html.ValidationMessageFor(model => model.Text)
+        <input type="submit" value="Send" />
+    </div>
 }

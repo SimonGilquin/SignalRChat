@@ -9,6 +9,7 @@ namespace Cellenza.Demo.SignalR.WebServer.Controllers
 {
     public class MessagesController : Controller
     {
+        #region Store
         public ICollection<Message> MessagesStore { get; set; }
 
         public MessagesController()
@@ -20,6 +21,7 @@ namespace Cellenza.Demo.SignalR.WebServer.Controllers
         {
             MessagesStore = store;
         }
+        #endregion
 
         //
         // GET: /Chat/

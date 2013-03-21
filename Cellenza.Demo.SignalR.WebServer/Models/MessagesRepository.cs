@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Cellenza.Demo.SignalR.WebServer.Models
 {
-    public class MessagesRepository
+    public class MessagesRepository : List<Message>
     {
-        public static ICollection<Message> Instance = new List<Message>();
+        public static ICollection<Message> Instance = new MessagesRepository();
 
         private MessagesRepository ()
 	    {
